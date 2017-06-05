@@ -5,8 +5,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-public class CurrencyFragment extends Fragment {
+import java.util.List;
+
+public class CurrencyFragment extends Fragment implements CurrencyDataSource.OnCurrencyArrivedListener {
 
 
     public CurrencyFragment() {
@@ -19,7 +22,16 @@ public class CurrencyFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_currency, container, false);
+        CurrencyDataSource.getCurrencies(this);
         return v;
     }
 
+    @Override
+    public void onCurrenciesArrived(List<CurrencyDataSource.Currency> currencies) {
+        if (currencies != null)
+            Toast.makeText(getActivity(), currencies.toString(), Toast.LENGTH_SHORT).show();
+        else {
+            Toast.makeText(getActivity(), "Error connecting to server", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
