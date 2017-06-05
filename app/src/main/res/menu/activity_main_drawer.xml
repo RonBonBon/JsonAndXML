@@ -6,6 +6,10 @@
             android:id="@+id/nav_currencies"
             android:icon="@drawable/ic_attach_money"
             android:title="Currencies" />
+        <item
+            android:id="@+id/nav_ynet"
+            android:icon="@drawable/ic_attach_money"
+            android:title="Ynet" />
     </group>
 
     <item android:title="Communicate">
