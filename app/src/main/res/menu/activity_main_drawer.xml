@@ -8,7 +8,7 @@
             android:title="Currencies" />
         <item
             android:id="@+id/nav_ynet"
-            android:icon="@drawable/ic_attach_money"
+            android:icon="@drawable/ic_rss_feed"
             android:title="Ynet" />
     </group>
 
